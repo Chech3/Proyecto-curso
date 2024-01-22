@@ -9,5 +9,11 @@ export const tasks = [
         title: "Hay que botar la basura",
         description: "No olvidar botar la basura"
     },
+    {
+        id: 2,
+        title: "Hay que botar la basura",
+        description: "No olvidar botar la basura"
+    },
+
 
 ]

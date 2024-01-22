@@ -4,17 +4,23 @@ import { useState, useEffect } from "react";
 import { tasks as data } from "./data/tasks";
 function App() {
   const [list, setList] = useState([]);
-  
+
   useEffect(() => {
     setList(data);
   }, []);
+
   function createTask(title, description) {
-    setList([...list, {title, description, id: list.length}])
+    setList([...list, { title, description, id: list.length }]);
   }
+
+  function deleteTask(taskId) {
+    setList(list.filter((filtrados) => filtrados.id !== taskId ))
+  }
+
   return (
     <>
       <TaskForm createTask={createTask} />
-      <TaskList data={list} />
+      <TaskList deleteTask={deleteTask} data={list} />
     </>
   );
 }

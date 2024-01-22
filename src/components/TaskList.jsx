@@ -1,5 +1,5 @@
 import TaskCard from './TaskCard'
-function TaskList({data}) {
+function TaskList({data, deleteTask}) {
   
   if (data.length === 0) {
     return <h1>No hay datos para mostrar</h1>;
@@ -9,7 +9,7 @@ function TaskList({data}) {
     <>
       <div>
         {data.map((task) => (
-          <TaskCard key={task.id} task={task} />
+          <TaskCard deleteTask={deleteTask} key={task.id} task={task} />
         ))}
       </div>
     </>
